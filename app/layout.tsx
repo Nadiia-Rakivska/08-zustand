@@ -5,6 +5,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
 import { Roboto } from 'next/font/google';
+import { IMG_URL, SITE_URL } from "@/lib/constans";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,11 +30,11 @@ export const metadata: Metadata = {
     title: "NoteHub",
     description:
       "NoteHub helps you capture and organize your ideas with ease.Secure storage, fast access, and a clean interface for better productivity.",
-    url: `https://notehub.com/notes/`,
+    url: SITE_URL,
 
     images: [
       {
-        url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+        url: IMG_URL,
         width: 1200,
         height: 630,
         alt: "NoteHub — online note-taking app",
