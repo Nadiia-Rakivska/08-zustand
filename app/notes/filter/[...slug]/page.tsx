@@ -6,7 +6,7 @@ import {
 import NotesClient from "./Notes.client";
 import { fetchNotes } from "@/lib/api";
 import { Metadata } from "next";
-import { IMG_URL, SITE_URL } from "@/lib/constans";
+import { IMG_URL, SITE_URL } from "@/lib/constants";
 
 
 
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: NotePageProps): Promise<Metad
 
   return {
     title: category,
-    description:`Explore the best notes in the "${category}" category on NoteHub.`,
+    description: `Explore the best notes in the "${category}" category on NoteHub.`,
     openGraph: {
       title: category,
       description: `Explore the best notes in the "${category}" category on NoteHub.`,

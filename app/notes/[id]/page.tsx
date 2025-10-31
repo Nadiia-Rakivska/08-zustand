@@ -6,7 +6,7 @@ import {
 } from "@tanstack/react-query";
 import NoteDetailsClient from "./NoteDetails.client";
 import { Metadata } from "next";
-import { IMG_URL, SITE_URL } from "@/lib/constans";
+import { IMG_URL, SITE_URL } from "@/lib/constants";
 
 interface NoteDetailsPageProps {
   params: Promise<{ id: string }>;
@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: NoteDetailsPageProps): Promis
     description: data.content,
     openGraph: {
       title: data.title,
-      description: `data.content`,
-      url: `${SITE_URL}/notes/filter/${id}`,
+      description: data.content,
+      url: `${SITE_URL}/notes/${id}`,
       siteName: 'NoteHub',
       images: [
         {

@@ -6,12 +6,6 @@ import { createNote } from "@/lib/api";
 import { useRouter } from "next/navigation";
 import { useNoteDraftStore } from "@/lib/store/noteStore";
 
-const formValues: FormValues = {
-  title: "",
-  content: "",
-  tag: "Todo",
-};
-
 export default function NoteForm() {
   const { draft, setDraft, clearDraft } = useNoteDraftStore();
   const router = useRouter();
@@ -22,6 +16,7 @@ export default function NoteForm() {
       queryClient.invalidateQueries({
         queryKey: ["notes"],
       });
+      clearDraft();
       onClose();
     },
   });
@@ -41,13 +36,12 @@ export default function NoteForm() {
   };
 
   const handleSubmit = (formData: FormData) => {
-    formValues.title = formData.get("title") as string;
-    formValues.content = formData.get("content") as string;
-    formValues.tag = formData.get("tag") as NoteTag;
-
+    const formValues: FormValues = {
+      title: formData.get("title") as string,
+      content: formData.get("content") as string,
+      tag: formData.get("tag") as NoteTag,
+    };
     mutate(formValues);
-    clearDraft();
-    onClose();
   };
   return (
     <form className={css.form} action={handleSubmit}>

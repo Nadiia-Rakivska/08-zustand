@@ -1,7 +1,7 @@
 import NoteForm from "@/components/NoteForm/NoteForm"
 import css from "./CreateNote.module.css"
 import { Metadata } from "next";
-import { IMG_URL, SITE_URL } from "@/lib/constans";
+import { IMG_URL, SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Create a New Note | NoteHub",
   description:
@@ -27,7 +27,7 @@ export default function CreateNote() {
   return (<main className={css.main}>
     <div className={css.container}>
       <h1 className={css.title}>Create note</h1>
-      <NoteForm/>
+      <NoteForm />
     </div>
   </main>)
 }

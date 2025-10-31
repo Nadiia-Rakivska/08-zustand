@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import css from "./page.module.css";
-import { IMG_URL, SITE_URL } from "@/lib/constans";
+import { IMG_URL, SITE_URL } from "@/lib/constants";
+
 
 export const metadata: Metadata = {
   title: "404-Not found",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     title: "404-Not found",
     description:
       "this page not found",
-    url: `&{SITE_URL}/404`,
+    url: `${SITE_URL}/404`,
 
     images: [
       {

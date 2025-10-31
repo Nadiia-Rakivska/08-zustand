@@ -5,7 +5,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
 import { Roboto } from 'next/font/google';
-import { IMG_URL, SITE_URL } from "@/lib/constans";
+import { IMG_URL, SITE_URL } from "@/lib/constants";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['500',"600" ,'700'],
+  weight: ['500', "600", '700'],
   variable: '--font-roboto',
   display: 'swap',
 });
@@ -52,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable}`}>
         <TanStackProvider>
           <Header />
           {children}
